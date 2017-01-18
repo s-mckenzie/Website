@@ -4,7 +4,7 @@
     $(".navbar a,a.btn-appoint, .quick-info li a, .overlay-detail a").on('click', function(event) {
 		// Only creates scrolling effect on hrefs that aren't links to another page
 		// This is determined via id
-		if ($(this).attr("id") != "links"){
+		if ($(this).attr("id") == "scroll"){
 			event.preventDefault();
 			var hash = this.hash;
 			$('html, body').animate({
