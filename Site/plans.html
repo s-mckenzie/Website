@@ -52,18 +52,39 @@
 <h4> Choose printers </h4>
 <form method='GET'>
 	Simple: <input type='checkbox' id='simple' value='simple'><br>
-	Colour: <input type='checkbox' id='sColour' value='sColour'><br>
-	5K: <input type="textbox" id='sc5'><br>
-	10K: <input type="textbox" id='sc10'><br>
-	20K: <input type="textbox" id='sc20'><br>
-	25K: <input type="textbox" id='sc25'><br>
-	45K: <input type="textbox" id='sc45'><br>
-	Mono: <input type='checkbox' id='sMono' value='sMono'><br>
-	5K: <input type="textbox" id='sm5'><br>
-	10K: <input type="textbox" id='sm10'><br>
-	20K: <input type="textbox" id='sm20'><br>
-	25K: <input type="textbox" id='sm25'><br>
-	45K: <input type="textbox" id='sm45'><br>
+		<div class="pType">
+			Colour: <input type='checkbox' class="sColour" id='sColour' value='sColour'><br>
+			
+			<div class="scOption">
+				5K: <input type="textbox" id='sc5'><br>
+				10K: <input type="textbox" id='sc10'><br>
+				20K: <input type="textbox" id='sc20'><br>
+				25K: <input type="textbox" id='sc25'><br>
+				45K: <input type="textbox" id='sc45'><br>
+			</div>
+			
+		</div>
+		
+		
+	
+
+		<div class="pType">
+			Mono: <input type='checkbox' class="sMono" id='sMono' value='sMono'><br>
+				
+			<div class="smOption">
+				5K: <input type="textbox" id='sm5'><br>
+				10K: <input type="textbox" id='sm10'><br>
+				20K: <input type="textbox" id='sm20'><br>
+				25K: <input type="textbox" id='sm25'><br>
+				45K: <input type="textbox" id='sm45'><br>
+			</div>
+			
+		</div>
+		
+	<p class="amount">You need 0 colour printers and 0 mono printers. If this is correct you may click submit</p>
+		
+	<input type="submit" class="submit" value="submit">
+	
 	<br>
 	
 	<br><br>
@@ -135,5 +156,6 @@
     <script src="js/jquery.easing.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/plan.js"></script>
 </body>
 </html>

@@ -598,3 +598,7 @@ coming soon
 	letter-spacing: -1px;
 }
 
+.pType, .sOption {
+	margin-left: 50px;
+}
+
