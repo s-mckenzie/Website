@@ -7,6 +7,7 @@
     <meta name="description" content="Terratone Printers">
     <meta name="keywords" content="terratone, printer, printers, ink, mono, monochromatic, colour, company, cartridges">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -49,21 +50,21 @@
 	</section>
 <!--/ banner-->
 <!--form-->
-<h4> Choose printers </h4>
+<div class="step">1</div><h4 class="stepHeader">Choose Printers</h4>
 <form method='GET'>
 	Simple: <input type='checkbox' id='simple' value='simple'><br>
 		<div class="pType">
 			Colour: <input type='checkbox' class="sColour" id='sColour' value='sColour'><br>
 			
 			<div class="scOption">
-				5K: <input type="textbox" id='sc5'><br>
-				10K: <input type="textbox" id='sc10'><br>
-				20K: <input type="textbox" id='sc20'><br>
-				25K: <input type="textbox" id='sc25'><br>
-				45K: <input type="textbox" id='sc45'><br>
+				5K: <input type="number" class="sc"  min=0 value=0 id='sc5'><br>
+				10K: <input type="number" class="sc"  min=0 value=0 id='sc10'><br>
+				20K: <input type="number" class="sc"  min=0 value=0 id='sc20'><br>
+				25K: <input type="number" class="sc"  min=0 value=0 id='sc25'><br>
+				45K: <input type="number" class="sc"  min=0 value=0 id='sc45'><br>
 			</div>
-			
-		</div>
+			</div>
+		
 		
 		
 	
@@ -80,8 +81,7 @@
 			</div>
 			
 		</div>
-		
-	<p class="amount">You need 0 colour printers and 0 mono printers. If this is correct you may click submit</p>
+	<p class="amount"></p>
 		
 	<input type="submit" class="submit" value="submit">
 	

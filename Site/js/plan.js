@@ -6,7 +6,7 @@ $(document).ready(function() {
 	
 	
 	$('#simple').click(function() {
-		$('.pType').slideToggle(400, function() {
+		$('.pType').slideToggle('fast', function() {
 			if($("#simple").prop('checked') == false) {
 				$('.sColour').prop('checked', false);
 				$('.scOption').slideUp();
@@ -26,23 +26,17 @@ $(document).ready(function() {
 		$('.smOption').slideToggle(400);	
 	});
 	
-	var colourTotal = 20;
+	var colourTotal = 0;
 	var monoTotal = 10;
-	
-	
-	//var str = $('.amount').text();
-	//alert(str);
-	
-	$('.scOption').on('input',function() {
-		colourTotal += $(this).val();
-		$('.amount').html("You need " + colourTotal + " Printers");
-	});
-	
-	
-	$('.amount').html("You need " + colourTotal + " Printers");
-	
-	
-	//var newStr = "You need 0 colour printers and 0 mono printers. If this is correct you may click submit";
 
+
+	$('.scOption').on('input', function() {
+		$('.sc').each(function() {
+			colourTotal += parseInt($(this).val());
+			
+		});
+		$('.amount').html("You need " + colourTotal + " Printers");
+		colourTotal = 0;
+	});
 
 });
