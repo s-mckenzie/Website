@@ -73,7 +73,8 @@ banner
     transition: all 0.3s;
 }
 .navbar-default {
-    background-color: transparent;
+    /*background-color: transparent;*/
+	background-color: rgba(27, 94, 32, 0.6);
     border: 0px;
 }
 .navbar {
@@ -145,8 +146,8 @@ banner
 	position: relative;
 }
 #shortbanner{
-
-	min-height: 70px;
+	background-color: white;
+	min-height: 90px;
 	position: relative;
 }
 .bg-color{
@@ -157,8 +158,12 @@ banner
 .bg-short{
 	/*background-color: rgba(13, 70, 83, 0.78);*/
 	background-color: rgba(27, 94, 32, 0.78);
-	min-height: 70px;
+	min-height: 90px;
 }
+.quick-fix {
+	background-color:white;
+}
+
 .banner-info{
 	padding-top: 190px;
 	padding-bottom:15px;

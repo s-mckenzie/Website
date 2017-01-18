@@ -18,14 +18,15 @@
     //jQuery to collapse the navbar on scroll
     $(window).scroll(function() {
         if ($(".navbar-default").offset().top > 50) {
+			$(".bg-short").addClass("quick-fix");			// Minor colour detail for the sake of style
             $(".navbar-fixed-top").addClass("top-nav-collapse");
         } else {
+			$(".bg-short").removeClass("quick-fix");
             $(".navbar-fixed-top").removeClass("top-nav-collapse");
         }
     });
     
 })(jQuery);
-
 
 // Function checks plan checkboxes to display other options
 
