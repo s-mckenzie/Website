@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 <!--banner-->
@@ -50,45 +51,95 @@
 	</section>
 <!--/ banner-->
 <!--form-->
-<div class="step">1</div><h4 class="stepHeader">Choose Printers</h4>
-<form method='GET'>
-	Simple: <input type='checkbox' id='simple' value='simple'><br>
-		<div class="pType">
-			Colour: <input type='checkbox' class="sColour" id='sColour' value='sColour'><br>
+<div class="wrapDiv">
+	<div class="step">1</div><h4 class="stepHeader">Choose Printers</h4>
+		<form class="personalInfo" method='GET'>
+			<input type="text" class="form-control br-radius-zero" placeholder="First Name" id="lol" name="fname" required/><br>
+			<input type="text" class="form-control br-radius-zero" placeholder="Last Name" id="lol" name="lname"  required/><br>
+			<input type="email" class="form-control br-radius-zero" placeholder="Email"  id="lol" name="email" required/><br>
+			<input type="tel" class="form-control br-radius-zero" placeholder="Phone Number"  id="lol" name="phone" pattern="\d{3}[\-]\d{3}[\-]\d{4}"/><br>
+			<input type="submit" id="testing" class="btn btn-form" value="submit">
+	
+	
+	
+	
+	
+	
+		</form>
+	
+	
+	
+	<form class="printerForm" method='GET'>
+		Simple: <input type='checkbox' id='simple' value='simple'><br>
+			<div class="spType">
+				Colour: <input type='checkbox' class="sColour" id='sColour' value='sColour'><br>
 			
-			<div class="scOption">
-				5K: <input type="number" class="sc"  min=0 value=0 id='sc5'><br>
-				10K: <input type="number" class="sc"  min=0 value=0 id='sc10'><br>
-				20K: <input type="number" class="sc"  min=0 value=0 id='sc20'><br>
-				25K: <input type="number" class="sc"  min=0 value=0 id='sc25'><br>
-				45K: <input type="number" class="sc"  min=0 value=0 id='sc45'><br>
-			</div>
+				<div class="scOption">
+				 	5K: <input type="number" class="sc"  min=0 value=0 id='sc5'><br>
+					10K: <input type="number" class="sc"  min=0 value=0 id='sc10'><br>
+					20K: <input type="number" class="sc"  min=0 value=0 id='sc20'><br>
+					25K: <input type="number" class="sc"  min=0 value=0 id='sc25'><br>
+					45K: <input type="number" class="sc"  min=0 value=0 id='sc45'><br>
+				</div>
 			</div>
 		
 		
 		
 	
 
-		<div class="pType">
-			Mono: <input type='checkbox' class="sMono" id='sMono' value='sMono'><br>
-				
-			<div class="smOption">
-				5K: <input type="textbox" id='sm5'><br>
-				10K: <input type="textbox" id='sm10'><br>
-				20K: <input type="textbox" id='sm20'><br>
-				25K: <input type="textbox" id='sm25'><br>
-				45K: <input type="textbox" id='sm45'><br>
-			</div>
+			<div class="spType">
+				Mono: <input type='checkbox' class="sMono" id='sMono' value='sMono'><br>
+				<div class="smOption">
+				 	5K: <input type="number" class="sm" min=0 value=0 id='sm5'><br>
+					10K: <input type="number" class="sm" min=0 value=0 id='sm10'><br>
+					20K: <input type="number" class="sm" min=0 value=0 id='sm20'><br>
+					25K: <input type="number" class="sm" min=0 value=0 id='sm25'><br>
+					45K: <input type="number" class="sm" min=0 value=0 id='sm45'><br>
+				</div>
 			
-		</div>
-	<p class="amount"></p>
+			</div>
+	
+		Multi-Function: <input type='checkbox' id='multi' value='multi'><br>
+			<div class="mpType">
+				Colour: <input type='checkbox' class="mfColour" id='mColour' value='sColour'><br>
+			
+				<div class="mfcOption">
+				 	5K: <input type="number" class="mfc"  min=0 value=0 id='sc5'><br>
+					10K: <input type="number" class="mfc"  min=0 value=0 id='sc10'><br>
+					20K: <input type="number" class="mfc"  min=0 value=0 id='sc20'><br>
+					25K: <input type="number" class="mfc"  min=0 value=0 id='sc25'><br>
+					45K: <input type="number" class="mfc"  min=0 value=0 id='sc45'><br>
+				</div>
+			</div>
 		
-	<input type="submit" class="submit" value="submit">
+		
+		
 	
-	<br>
+
+			<div class="mpType">
+				Mono: <input type='checkbox' class="mfMono" id='mMono' value='sMono'><br>
+				
+				<div class="mfmOption">
+				 	5K: <input type="number" class="mfm" min=0 value=0 id='sm5'><br>
+					10K: <input type="number" class="mfm" min=0 value=0 id='sm10'><br>
+					20K: <input type="number" class="mfm" min=0 value=0 id='sm20'><br>
+					25K: <input type="number" class="mfm" min=0 value=0 id='sm25'><br>
+					45K: <input type="number" class="mfm" min=0 value=0 id='sm45'><br>
+				</div>
+			
+			</div>
+		<p class="amount"></p>
+		
+		<input type="submit" class="submit btn btn-form" value="submit">
 	
-	<br><br>
-</form>
+		<br>
+	
+		<br><br>
+	</form>
+</div>
+
+
+
 <!--/ form-->
 
 <!--footer-->
@@ -157,5 +208,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/plan.js"></script>
+    <script src="js/classie.js"></script>
+
 </body>
 </html>
