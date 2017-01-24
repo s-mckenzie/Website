@@ -5,6 +5,18 @@
     Author URL: https://bootstrapmade.com
 */
 
+/*!
+ * bootswatch v3.3.7
+ * Homepage: http://bootswatch.com
+ * Copyright 2012-2016 Thomas Park
+ * Licensed under MIT
+ * Based on Bootstrap
+*//*!
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ *//*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
 body {
 	font-family: 'Open Sans', sans-serif;
 	line-height: 20px;
@@ -157,7 +169,7 @@ banner
 }
 .bg-short{
 	/*background-color: rgba(13, 70, 83, 0.78);*/
-	background-color: rgba(27, 94, 32, 0.78);
+	background-color: white;
 	min-height: 90px;
 }
 .bg-soon{
@@ -167,6 +179,10 @@ banner
 }
 .quick-fix {
 	background-color:white;
+}
+
+.no-opacity {
+	background-color: #2E7D32;
 }
 
 .banner-info{
@@ -421,6 +437,37 @@ cta -2
 {
 	margin-right: 7px;
 }
+
+/***************************************
+cta -3
+***************************************/
+#cta-3{
+	background-color: white;
+}
+.greyer{
+	color: rgb(41, 48, 46);
+}
+
+.grey{
+	color: #666;
+}
+.icon-play, .icon-play:hover, .icon-play:focus{
+	background-color: #81C784;
+	padding: 5px 10px;
+	color: #fff;
+	text-decoration: none;
+	padding: 5px 17px;
+	margin-top: 26px;
+	display: block;
+}
+.text-primary {
+    color: #81C784;
+}
+.icon-mar 
+{
+	margin-right: 7px;
+}
+
 /***************************************
 contact us
 ***************************************/
