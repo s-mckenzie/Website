@@ -22,6 +22,12 @@ if (!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]
 	onExit("", "Invalid email address.");
 }
 
+// Important for preventing injections
+if(IsInjected($visitor_email))
+{
+    onExit("", "Invalid value in email address.");
+}
+
 // No errors were found, thus starting our preparations
 if (empty($error)){
 	// Mail format goes as so: mail(to,subject,message,headers)
@@ -42,12 +48,43 @@ if (empty($error)){
 
 onExit($success, $error);
 
- # ========================================================================
- # onExit Function
- # ========================================================================
- # Function stores either an indication of success or an error message into JSON string then outputs
- # it and exits.
- # ========================================================================
+# ========================================================================
+# IsInjected Function
+# ========================================================================
+# Function checks user's inputted email and looks to see if it has any
+# injected information into our email headers. Such changes would benefit
+# spammers by letting them use our form to spam emails.
+# ========================================================================
+function IsInjected($str)
+{
+    $injections = array('(\n+)',
+           '(\r+)',
+           '(\t+)',
+           '(%0A+)',
+           '(%0D+)',
+           '(%08+)',
+           '(%09+)'
+           );
+                
+    $inject = join('|', $injections);
+    $inject = "/$inject/i";
+     
+    if(preg_match($inject,$str))
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+}
+
+# ========================================================================
+# onExit Function
+# ========================================================================
+# Function stores either an indication of success or an error message into
+# JSON string then outputs it and exits.
+# ========================================================================
 function onExit($success, $error){
     $arr = array('success' => $success, 'error' => $error);
     echo json_encode($arr);     // Echo the array as a JSON string
