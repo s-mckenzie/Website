@@ -54,12 +54,57 @@
 <div class="wrapDiv">
 <div class="space"></div>
 	<div class="step">1</div><h4 class="stepHeader">Choose Printers</h4>
-		<form class="personalInfo" method='GET'>
-			<input type="text" class="form-control br-radius-zero" placeholder="First Name" id="lol" name="fname" required/><br>
-			<input type="text" class="form-control br-radius-zero" placeholder="Last Name" id="lol" name="lname"  required/><br>
-			<input type="email" class="form-control br-radius-zero" placeholder="Email"  id="lol" name="email" required/><br>
-			<input type="tel" class="form-control br-radius-zero" placeholder="Phone Number"  id="lol" name="phone" pattern="\d{3}[\-]\d{3}[\-]\d{4}"/><br>
-			<input type="submit" id="testing" class="btn btn-form" value="submit">
+		<form class="personalInfo" action="" method="post">
+		
+		<div id="sendmessage">Your message has been sent. Thank you!</div>
+        <div id="errormessage">There is an error in one or more fields.</div>
+		
+		<div id="fnameGroup" class="form-group">
+			<input type="text" class="form-control br-radius-zero" placeholder="First Name*" id="fname" name="fname"/><br>
+			<div id="nameVal" class="validation"></div>
+        </div>
+        
+        <div id="lnameGroup" class="form-group">
+			<input type="text" class="form-control br-radius-zero" placeholder="Last Name*" id="lname" name="lname"/><br>
+			<div id="lnameVal" class="validation"></div>
+        </div>
+			
+		<div id="cnameGroup" class="form-group">	
+			<input type="text" class="form-control br-radius-zero" placeholder="Company Name*" id="company" name="company"/><br>
+			<div id="cnameVal" class="validation"></div>
+        </div>
+			
+		<div id="emailGroup" class="form-group">
+			<input type="email" class="form-control br-radius-zero" placeholder="Email*"  id="email" name="email"/><br>
+			<div id="emailVal" class="validation"></div>
+        </div>
+			
+		<div id="phoneGroup" class="form-group">
+			<input type="tel" class="form-control br-radius-zero" placeholder="Phone Number*: 123-456-7890"  id="phone" name="phone"/><br>
+			<div id="phoneVal" class="validation"></div>
+        </div>
+			
+		<div id="addressGroup" class="form-group">
+			<input type="text" class="form-control br-radius-zero" placeholder="Address*"  id="address" name="address"/><br>
+			<div id="addressVal" class="validation"></div>
+        </div>
+			
+        <div id="provinceGroup" class="form-group">
+        	<select class="form-control" id="province" name="province">
+        		<option value="" selected disabled>Select your province...</option>
+  				<option value="qc">Quebec</option>
+  				<option value="on">Ontario</option>
+			</select>
+			<div id="provinceVal" class="validation"></div>
+        </div>
+		
+		<div id="postalGroup" class="form-group">	
+			<input type="text" class="form-control br-radius-zero" placeholder="Postal Code*: A1A1A1"  id="postal" name="postal"/><br>
+			<div id="postalVal" class="validation"></div>
+        </div>	
+			
+			<button type="button" onclick="moreFields()" id="lol" class="btn btn-form second-submit">Submit</button>
+		
 	
 	
 	
