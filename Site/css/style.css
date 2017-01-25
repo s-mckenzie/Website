@@ -223,10 +223,47 @@ banner
     display: inline-block;
 }
 /***************************************
+about
+***************************************/
+#about{
+	background-color: rgb(41, 48, 46);
+}
+.lg-line{
+	line-height: 1.4;
+	font-size: 28px;
+}
+.more-features-box-text-icon {
+    float: left;
+    width: 40px;
+    height: 40px;
+    padding-top: 6px;
+    background: #81C784;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+}
+.more-features-box-text-description h3{
+    padding-bottom: 15px;
+}
+.more-features-box-text-icon i {
+    font-size: 18px;
+    line-height: 26px;
+}
+.more-features-box-text-description{
+	margin-left: 80px;
+	margin-bottom: 35px;
+}
+.sec-para{
+	padding-bottom: 10px;
+}
+
+/***************************************
 services
 ***************************************/
 #service{
-	background-color: rgb(41, 48, 46);
+	background-color: rgba(238, 238, 238, 0.15);
 }
 
 .icon i{
@@ -269,42 +306,6 @@ services
 	font-size: 15px !important;
 }.
 
-/***************************************
-about
-***************************************/
-#about{
-    background-color: rgba(238, 238, 238, 0.15);
-}
-.lg-line{
-	line-height: 1.4;
-	font-size: 28px;
-}
-.more-features-box-text-icon {
-    float: left;
-    width: 40px;
-    height: 40px;
-    padding-top: 6px;
-    background: #81C784;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-    color: #fff;
-    text-align: center;
-}
-.more-features-box-text-description h3{
-    padding-bottom: 15px;
-}
-.more-features-box-text-icon i {
-    font-size: 18px;
-    line-height: 26px;
-}
-.more-features-box-text-description{
-	margin-left: 80px;
-	margin-bottom: 35px;
-}
-.sec-para{
-	padding-bottom: 10px;
-}
 /***************************************
 testimonial
 ***************************************/
@@ -473,7 +474,7 @@ contact us
     margin-top: 40px;
 }
 .btn-form, .btn-form:hover, .btn-form:focus {
-    background-color: #81C784;
+    background-color: #4CAF50;
     color: #fff;
     border-radius: 0px;
     padding: 10px 20px;
