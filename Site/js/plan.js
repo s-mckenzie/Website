@@ -528,17 +528,17 @@ function validateActions(val_id, group_id, msg, err){
 	if(err){		
 		$("#" + val_id).addClass("show");				// Show error
 		$("#" + group_id).addClass("has-error");		// Change underline to red
-		$("#" + group_id).addClass("tester");			// Add a class only to those with errors
+		$("#" + group_id).addClass("error-scroll");			// Add a class only to those with errors
 		error = err;									// Indicate that we encountered an error if we haven't already	
 													
 	}
 	else{
 		$("#" + val_id).removeClass("show");			// Show error
 		$("#" + group_id).removeClass("has-error");		// Return underline back to blue
-        $("#" + group_id).removeClass("tester");		// Remove a class only to those with errors
+        $("#" + group_id).removeClass("error-scroll");		// Remove a class only to those with errors
 	}
 }
 
 function scrollToError() {
-	$('html, body').animate({scrollTop: ($('.tester').first().offset().top - 100)} ,500); // Animation to scroll to first error
+	$('html, body').animate({scrollTop: ($('.error-scroll').first().offset().top - 100)} ,500); // Animation to scroll to first error
 }
