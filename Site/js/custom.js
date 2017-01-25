@@ -19,11 +19,11 @@
     $(window).scroll(function() {
         if ($(".navbar-default").offset().top > 50) {
 			//$(".bg-short").addClass("quick-fix");			// Minor colour detail for the sake of style
-			$(".navbar-default").removeClass("no-opacity");
+			$(".navbar-short").removeClass("no-opacity");
             $(".navbar-fixed-top").addClass("top-nav-collapse");
         } else {
 			//$(".bg-short").removeClass("quick-fix");
-			$(".navbar-default").addClass("no-opacity");
+			$(".navbar-short").addClass("no-opacity");
             $(".navbar-fixed-top").removeClass("top-nav-collapse");
         }
     });

@@ -218,13 +218,17 @@ banner
     color: #fff;
     margin: 0 auto;
 }
-.text-primary i{
+.text-primary .text-primary-2 i{
     padding-top: 8px;
     display: inline-block;
 }
 /***************************************
 services
 ***************************************/
+#service{
+	background-color: rgb(41, 48, 46);
+}
+
 .icon i{
 	/*
 	color: #0cb8b6;
@@ -263,42 +267,8 @@ services
 }
 .icon-info p{
 	font-size: 15px !important;
-}
-/***************************************
-cta-1
-***************************************/
-.moreinfo-tab {
-	background-color: #81C784;
-	float: left;
-}
+}.
 
-.tt-info{
-	padding: 20px;
-	color: #fff;
-}
-.tt-info h3{
-	padding-bottom: 16px;
-	color: #fff;
-	font-weight: 600;
-}
-.tt-info-btn, .tt-info-btn:hover, .tt-info-btn:focus {
-    margin: 15px 0px 5px;
-    display: inline-block;
-    border: solid white 2px;
-    padding: 3px 8px;
-    font-size: 12px;
-    color: #fff;
-    font-weight: 400 !important;
-    cursor: pointer;
-}
-td {
-    border: 0px solid #ededed;
-    border-top: 1px solid rgba(216, 216, 216, 0.5);
-    padding: 6px 10px 6px 0;
-}
-.tt-info{
-    font-size: 14px;
-}
 /***************************************
 about
 ***************************************/
@@ -334,18 +304,6 @@ about
 }
 .sec-para{
 	padding-bottom: 10px;
-}
-/***************************************
-doctor team
-***************************************/
-.thumbnail {
-	border-radius: 0px;
-}
-.caption h3{
-    padding-bottom: 5px;
-}
-.caption p{
-    padding-bottom: 10px;
 }
 /***************************************
 testimonial
@@ -413,6 +371,46 @@ testimonial
     border-left: 0;
 }
 /***************************************
+cta-1
+***************************************/
+#cta-1{
+	background-color: #4CAF50;
+}
+
+.moreinfo-tab {
+	background-color: #4CAF50;
+	float: left;
+}
+
+.tt-info{
+	padding: 20px;
+	color: #fff;
+}
+.tt-info h3{
+	padding-bottom: 16px;
+	color: #fff;
+	font-weight: 600;
+}
+.tt-info-btn, .tt-info-btn:hover, .tt-info-btn:focus {
+    margin: 15px 0px 5px;
+    display: inline-block;
+    border: solid white 2px;
+    padding: 3px 8px;
+    font-size: 12px;
+    color: #fff;
+    font-weight: 400 !important;
+    cursor: pointer;
+}
+td {
+    border: 0px solid #ededed;
+    border-top: 1px solid rgba(216, 216, 216, 0.5);
+    padding: 6px 10px 6px 0;
+}
+.tt-info{
+    font-size: 14px;
+}
+
+/***************************************
 cta -2
 ***************************************/
 #cta-2{
@@ -460,8 +458,8 @@ cta -3
 	margin-top: 26px;
 	display: block;
 }
-.text-primary {
-    color: #81C784;
+.text-primary-2 {
+    color: #43A047;
 }
 .icon-mar 
 {

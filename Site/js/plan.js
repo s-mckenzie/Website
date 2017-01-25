@@ -28,7 +28,7 @@ $(document).ready(function() {
 			// Has the user unchecked simple printers?
 			if($("#simple").prop('checked') == false) {
 				
-				// No printers are selecte; hide the submit button and the paragraph informing user with some information
+				// No printers are selected; hide the submit button and the paragraph informing user with some information
 				if($("#simple").prop('checked') == false && $("#multi").prop('checked') == false) {
 					$('.submit').stop().animate({width: 'hide'}, 'fast');
 					$('.amount').stop().fadeOut('fast');
@@ -42,13 +42,13 @@ $(document).ready(function() {
 				$('.sMono').prop('checked', false);
 				$('.smOption').slideUp('slow');
 				
-				// Reset all color printer amounts to 0
+				// Reset all simple color printer amounts to 0
 				$('.sc').each(function() {
 					$(this).val(0);
 					colorDisplay = 0;	
 				});
 				
-				// Reset all mono printer amounts to 0
+				// Reset all simple mono printer amounts to 0
 				$('.sm').each(function() {
 					$(this).val(0);
 					monoDisplay = 0;
@@ -109,43 +109,44 @@ $(document).ready(function() {
 	
 	/******************************************* MULTI PRINTER FUNCTIONS ****************************************/
 	
-	
+	// Does the user need multi-function printers?
 	$('#multi').click(function() {
-		$('.mpType').slideToggle('slow');
+		$('.mpType').slideToggle('slow'); //Display the list of multi-function printers; color and mono
 		
+		// Has the user unchecked mfc printers?
 		if($("#multi").prop('checked') == false) {
 				
-				
+				// No printers are selected; hide the submit button and the paragraph informing user with some information
 				if($("#simple").prop('checked') == false && $("#multi").prop('checked') == false) {
 					$('.submit').stop().animate({width: 'hide'}, 'fast');
 					$('.amount').stop().fadeOut('fast');
 				}
 				
+				// Uncheck and hide the color printer options
 				$('.mfColour').prop('checked', false);
 				$('.mfcOption').slideUp('slow');
 				
-			
+				// Uncheck and hide the mono printer options
 				$('.mfMono').prop('checked', false);
 				$('.mfmOption').slideUp('slow');
 				
+				// Reset all mfc color printer amounts to 0
 				$('.mfc').each(function() {
 					$(this).val(0);
 					
 				});
 				
+				// Reset all mfc color printer amounts to 0
 				$('.mfm').each(function() {
 					$(this).val(0);
 					
 				});
 				
 				colourValues();
-				monoValues();
-				displayAmount();
-				
+				monoValues(); 
+				displayAmount(); // Displays the new amount of printers to the user 	
 			}
 	});
-	
-	
 	
 	
 	$('.mfColour').click(function() {
