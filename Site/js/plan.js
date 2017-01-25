@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+	// Hiding certain form elements on load. elements will be shown as user completes the form 
 	$('.spType').hide();
 	$('.mpType').hide();
 	$('.scOption').hide();
@@ -9,86 +11,97 @@ $(document).ready(function() {
 	$('.amount').hide();
 	$('.personalInfo').hide();
 	
+	// Keeps track of the number of color and mono printers the user needs
 	var colourTotal = 0;
-	//var multiColourTotal = 0;
 	var colourDisplay = 0;
 	
-	//var multiMonoTotal = 0;
 	var monoTotal= 0;
 	var monoDisplay = 0;
 	
 	
 	/******************************************* SIMPLE PRINTER FUNCTIONS ****************************************/
 	
+	// Does the user need simple printers?
 	$('#simple').click(function() {
-		$('.spType').slideToggle('slow');
+		$('.spType').slideToggle('slow'); //Display the list of simple printers; color and mono
+		
+			// Has the user unchecked simple printers?
 			if($("#simple").prop('checked') == false) {
 				
+				// No printers are selecte; hide the submit button and the paragraph informing user with some information
 				if($("#simple").prop('checked') == false && $("#multi").prop('checked') == false) {
 					$('.submit').stop().animate({width: 'hide'}, 'fast');
 					$('.amount').stop().fadeOut('fast');
 				}
 				
+				// Uncheck and hide the color printer options
 				$('.sColour').prop('checked', false);
 				$('.scOption').slideUp('slow');
 				
-			
+				// Uncheck and hide the mono printer options
 				$('.sMono').prop('checked', false);
 				$('.smOption').slideUp('slow');
 				
+				// Reset all color printer amounts to 0
 				$('.sc').each(function() {
 					$(this).val(0);
-					colorDisplay = 0;
-					
+					colorDisplay = 0;	
 				});
 				
+				// Reset all mono printer amounts to 0
 				$('.sm').each(function() {
 					$(this).val(0);
 					monoDisplay = 0;
-					
 				});
+				
 				
 				colourValues();
 				monoValues();
-				displayAmount();
+				displayAmount(); // Displays the new amount of printers to the user 
 				
 			}	
 		
 		
 	});
 	
+	// Has the user checked or unchecked simple color printers?
 	$('.sColour').click(function() {		
-		$('.scOption').slideToggle('slow');	
+		$('.scOption').slideToggle('slow');	 // Toggle the options on and off
 		
-		if($(this).prop('checked') == false)	{
+		// If user unchecked, reset all values to 0
+		if($(this).prop('checked') == false) {
 			$('.sc').each(function() {
 					$(this).val(0);
 					
 			});
+			
 			colourValues();
-			//monoValues();
 			displayAmount();
 		}
 	});
 	
+	// Has the user checked or unchecked simple mono printers?
 	$('.sMono').click(function() {
-		$('.smOption').slideToggle('slow');	
+		$('.smOption').slideToggle('slow');	// Toggle the options on and off
 		
-		if($(this).prop('checked') == false)	{
+		// If user unchecked, reset all values to 0
+		if($(this).prop('checked') == false) {
 			$('.sm').each(function() {
 					$(this).val(0);
 					
 			});
-			//colourValues();
+			
 			monoValues();
 			displayAmount();
 		}
 	});
-
+	
+	// On input change; grab, store and display the amount of color printers
 	$('.scOption').on('input', function() {
 		colourValues();
 	});
 	
+	// On input change; grab, store and display the amount of mono printers
 	$('.smOption').on('input', function() {
 		monoValues();
 		
@@ -223,6 +236,7 @@ $(document).ready(function() {
 		
 		$('.mfc').each(function() {
 			colourTotal += parseInt($(this).val());
+			
 			if (colourTotal > 0) {
 				$('.submit').stop().animate({width: 'show'});
 			}
@@ -418,7 +432,9 @@ function sendMail(){
 	if (error){
 		$("#errormessage").addClass("show");
 		$("#sendmessage").removeClass("show");
-		return false;																		// Prevent form from sending
+		scrollToError();
+		return false; // Prevent form from sending
+		
 	}
 	else{
 		// Empty each field (to prevent submit button spam)
@@ -438,6 +454,10 @@ function sendMail(){
 		// Disable the submit button
 		$('.second-submit').attr('disabled','disabled');
 	}
+	
+	
+	
+
 	
 	
 	//----------------------------------------//
@@ -498,17 +518,26 @@ function mailReturn(data, status){
 // -------------------------------------------------------------------------
 function validateActions(val_id, group_id, msg, err){
 	document.getElementById(val_id).innerHTML = "<span class='label label-danger'>"+ msg + "</span>";	// Add error message
-	
+
 	// Show/Hide error
 	if(err){		
 		$("#" + val_id).addClass("show");				// Show error
 		$("#" + group_id).addClass("has-error");		// Change underline to red
-		error = err;									// Indicate that we encountered an error if we haven't already
+		//$("#" + val_id).addClass("tester");				// Show error
+		$("#" + group_id).addClass("tester");
+		error = err;									// Indicate that we encountered an error if we haven't already	
+													
 	}
 	else{
 		$("#" + val_id).removeClass("show");			// Show error
 		$("#" + group_id).removeClass("has-error");		// Return underline back to blue
 	}
+}
+
+function scrollToError() {
+				$('html, body').animate({
+    scrollTop: ($('.tester').first().offset().top - 100)
+},500);
 }
 
 }
