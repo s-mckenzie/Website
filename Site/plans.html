@@ -32,13 +32,13 @@
 				    </div>
 				    <div class="collapse navbar-collapse navbar-right" id="myNavbar">
 				      <ul class="nav navbar-nav">
-				        <li class="active"><a href="index.html">Home</a></li>
+				        <li class=""><a href="index.html">Home</a></li>
 				        <li class=""><a href="index.html#service">Services</a></li>
 				        <li class=""><a href="index.html#about">About</a></li>
 				        <li class=""><a href="index.html#testimonial">Testimonial</a></li>
 				        <li class=""><a href="index.html#contact">Contact</a></li>
 						<li class=""><a href="faq.html">How it works</a></li>
-						<li class=""><a href="plans.html">Plans</a></li>
+						<li class="active"><a href="plans.html">Plans</a></li>
 						<!--<li class=""><a href="comingsoon.html">Login</a></li>
 						<li class=""><a href="comingsoon.html">Register</a></li>-->
 				      </ul>
@@ -54,7 +54,7 @@
 <div class="wrapDiv">
 <div class="space"></div>
 	<div class="step">1</div><h4 class="stepHeader">Choose Printers</h4>
-		<form class="personalInfo" action="" method="post">
+	<form class="personalInfo" action="" method="post">
 		
 		<div id="sendmessage">Your message has been sent. Thank you!</div>
         <div id="errormessage">There is an error in one or more fields.</div>
@@ -103,18 +103,9 @@
 			<div id="postalVal" class="validation"></div>
         </div>	
 			
-			<button type="button" onclick="moreFields()" id="lol" class="btn btn-form second-submit">Submit</button>
-		
-	
-	
-	
-	
-	
-	
-		</form>
-	
-	
-	
+			<button type="button" onclick="submitForm()" id="lol" class="btn btn-form second-submit">Submit</button>
+	</form>
+
 	<form class="printerForm" method='GET'>
 		Simple: <input type='checkbox' id='simple' value='simple'><br>
 			<div class="spType">
@@ -128,10 +119,6 @@
 					45K: <input type="number" class="sc"  min=0 value=0 id='sc45'><br>
 				</div>
 			</div>
-		
-		
-		
-	
 
 			<div class="spType">
 				Mono: <input type='checkbox' class="sMono" id='sMono' value='sMono'><br>
@@ -157,10 +144,6 @@
 					45K: <input type="number" class="mfc"  min=0 value=0 id='sc45'><br>
 				</div>
 			</div>
-		
-		
-		
-	
 
 			<div class="mpType">
 				Mono: <input type='checkbox' class="mfMono" id='mMono' value='sMono'><br>
@@ -183,8 +166,6 @@
 		<br><br>
 	</form>
 </div>
-
-
 
 <!--/ form-->
 

@@ -27,41 +27,39 @@ $(document).ready(function() {
 		
 			// Has the user unchecked simple printers?
 			if($("#simple").prop('checked') == false) {
-				
-				// No printers are selected; hide the submit button and the paragraph informing user with some information
-				if($("#simple").prop('checked') == false && $("#multi").prop('checked') == false) {
-					$('.submit').stop().animate({width: 'hide'}, 'fast');
-					$('.amount').stop().fadeOut('fast');
-				}
-				
-				// Uncheck and hide the color printer options
-				$('.sColour').prop('checked', false);
-				$('.scOption').slideUp('slow');
-				
-				// Uncheck and hide the mono printer options
-				$('.sMono').prop('checked', false);
-				$('.smOption').slideUp('slow');
-				
-				// Reset all simple color printer amounts to 0
-				$('.sc').each(function() {
-					$(this).val(0);
-					colorDisplay = 0;	
-				});
-				
-				// Reset all simple mono printer amounts to 0
-				$('.sm').each(function() {
-					$(this).val(0);
-					monoDisplay = 0;
-				});
-				
-				
-				colourValues();
-				monoValues();
-				displayAmount(); // Displays the new amount of printers to the user 
-				
-			}	
-		
-		
+
+                // No printers are selected; hide the submit button and the paragraph informing user with some information
+                if ($("#simple").prop('checked') == false && $("#multi").prop('checked') == false) {
+                    $('.submit').stop().animate({width: 'hide'}, 'fast');
+                    $('.amount').stop().fadeOut('fast');
+                }
+
+                // Uncheck and hide the color printer options
+                $('.sColour').prop('checked', false);
+                $('.scOption').slideUp('slow');
+
+                // Uncheck and hide the mono printer options
+                $('.sMono').prop('checked', false);
+                $('.smOption').slideUp('slow');
+
+                // Reset all simple color printer amounts to 0
+                $('.sc').each(function () {
+                    $(this).val(0);
+                    colorDisplay = 0;
+                });
+
+                // Reset all simple mono printer amounts to 0
+                $('.sm').each(function () {
+                    $(this).val(0);
+                    monoDisplay = 0;
+                });
+
+
+                colourValues();
+                monoValues();
+                //displayAmount(); // Displays the new amount of printers to the user
+
+            }
 	});
 	
 	// Has the user checked or unchecked simple color printers?
@@ -76,7 +74,7 @@ $(document).ready(function() {
 			});
 			
 			colourValues();
-			displayAmount();
+			displayAmount(); // Displays the new amount of printers to the user 
 		}
 	});
 	
@@ -92,7 +90,7 @@ $(document).ready(function() {
 			});
 			
 			monoValues();
-			displayAmount();
+			displayAmount(); // Displays the new amount of printers to the user 
 		}
 	});
 	
@@ -144,14 +142,15 @@ $(document).ready(function() {
 				
 				colourValues();
 				monoValues(); 
-				displayAmount(); // Displays the new amount of printers to the user 	
+				//displayAmount(); // Displays the new amount of printers to the user 	
 			}
 	});
 	
-	
+	// Has the user checked or unchecked mfc color printers?
 	$('.mfColour').click(function() {
 		$('.mfcOption').slideToggle('slow');
 		
+		// If user unchecked, reset all values to 0
 		if($(this).prop('checked') == false)	{
 			$('.mfc').each(function() {
 					$(this).val(0);
@@ -159,13 +158,15 @@ $(document).ready(function() {
 			});
 			colourValues();
 			//monoValues();
-			displayAmount();
+			displayAmount(); // Displays the new amount of printers to the user 
 		}
 	});
 	
+	// Has the user checked or unchecked mfc mono printers?
 	$('.mfMono').click(function() {
 		$('.mfmOption').slideToggle('slow');
 		
+		// If user unchecked, reset all values to 0
 		if($(this).prop('checked') == false)	{
 			$('.mfm').each(function() {
 					$(this).val(0);
@@ -177,49 +178,51 @@ $(document).ready(function() {
 		}	
 	});
 	
-	
-	
-	
+	// On input change; grab, store and display the amount of color printers
 	$('.mfcOption').on('input', function() {
 		colourValues();
 	});
 	
+	// On input change; grab, store and display the amount of mono printers
 	$('.mfmOption').on('input', function() {
 		monoValues();
 		
 	});
 	
+	
+	
+	
+	/******************************************* GENERAL FUNCTIONS ****************************************/
+	
+	// No validation has been added to submit button as of now!!!! Remove this comment when validation is complete
+	// User has clicked submit
 	$('.submit').click(function() {
-		$('.printerForm').fadeOut().empty();
-		//$('.printerForm').hide();
-		$('.personalInfo').show().animate( {'margin-left':'3.7%' },1000);
-		//.fadeIn('slow');
-		
-		//$('.printerForm').fadeOut().empty();
+		$('.printerForm').fadeOut().empty(); // Fade out the printer plans form
+		$('.personalInfo').show().animate( {'margin-left':'3.7%' },1000); // Fade in the personal information form
+
+		// Fade out the previous step # the user was on, fade in the new step # the user is on
 		$(".step").fadeOut(function() {
 			$(this).fadeIn('fast').html("2");
 		});
 		
-		
+		// Fade out the previous step header the user was on, fade in the new step header the user is on
 		$('.stepHeader').fadeOut(function() {
 			$(this).fadeIn('fast').html("Personal Information");
 		})
 	
 	});
 	
-	
-	/******************************************* GENERAL FUNCTIONS ****************************************/
-	
+	// Displays the amount of each type of printer the user is requesting
 	function displayAmount() {
 		$('.amount').fadeIn('slow').html("You need " + colourDisplay + " Colour Printers and " + monoDisplay + " Mono Printers");
-		
-		
 	}
 	
+	// Updates the color printer amount based on form values
 	function colourValues() {
-		$('.sc').each(function() {
+		$('.sc').each(function() { // Simple color printers
 			colourTotal += parseInt($(this).val());
 			
+			// Show the submit button when the user is requesting at least 1 printer
 			if (colourTotal > 0) {
 				$('.submit').stop().animate({width: 'show'});
 			}
@@ -228,16 +231,16 @@ $(document).ready(function() {
 		
 		colourDisplay = colourTotal;
 		
+		// Hide the submit button if no printers are selected
 		if (monoDisplay == 0 && colourDisplay == 0) {
 				$('.submit').stop().animate({width: 'hide'}, 'fast');
 		}
 		
-		//displayAmount();
-		//colourTotal = 0;
 		
-		$('.mfc').each(function() {
+		$('.mfc').each(function() { // Mfc color printers
 			colourTotal += parseInt($(this).val());
 			
+			// Show the submit button when the user is requesting at least 1 printer
 			if (colourTotal > 0) {
 				$('.submit').stop().animate({width: 'show'});
 			}
@@ -245,18 +248,44 @@ $(document).ready(function() {
 		});
 		colourDisplay = colourTotal;
 		
+		// Hide the submit button if no printers are selected
 		if (monoDisplay == 0 && colourDisplay == 0) {
 				$('.submit').stop().animate({width: 'hide'}, 'fast');
 		}
 		
-		displayAmount();
-		colourTotal = 0;
+		// Display amount only if at least 1 printer is selected
+		if (colourTotal == 0 && monoTotal == 0) {
+			;
+		}
+		else {
+			displayAmount();
+		}
+		colourTotal = 0; //reset the color total
 		
 	}
 	
+	// Updates the mono printer amount based on form values
 	function monoValues() {
-		$('.sm').each(function() {
+		$('.sm').each(function() { // Simple mono printers
 			monoTotal += parseInt($(this).val());
+			
+			// Show the submit button when the user is requesting at least 1 printer
+			if (monoTotal > 0) {
+				$('.submit').stop().animate({width: 'show'});
+			}
+				
+		});
+		monoDisplay = monoTotal;
+		
+		// Hide the submit button if no printers are selected
+		if (monoDisplay == 0 && colourDisplay == 0) {
+				$('.submit').stop().animate({width: 'hide'}, 'fast');
+		}
+		
+		$('.mfm').each(function() { // Mfc mono printers
+			monoTotal += parseInt($(this).val());
+			
+			// Show the submit button when the user is requesting at least 1 printer
 			if (monoTotal > 0) {
 				$('.submit').stop().animate({width: 'show'});
 			}
@@ -265,60 +294,37 @@ $(document).ready(function() {
 		});
 		monoDisplay = monoTotal;
 		
+		// Hide the submit button if no printers are selected
 		if (monoDisplay == 0 && colourDisplay == 0) {
 				$('.submit').stop().animate({width: 'hide'}, 'fast');
 		}
 			
-			
-		//displayAmount();
-		//monoTotal = 0
-		
-		$('.mfm').each(function() {
-			monoTotal += parseInt($(this).val());
-			if (monoTotal > 0) {
-				$('.submit').stop().animate({width: 'show'});
-			}
-			
-			
-		});
-		monoDisplay = monoTotal;
-		
-		if (monoDisplay == 0 && colourDisplay == 0) {
-				$('.submit').stop().animate({width: 'hide'}, 'fast');
+		// Display amount only if at least 1 printer is selected	
+		if (colourTotal == 0 && monoTotal == 0) {
+			;
 		}
-			
-			
-		displayAmount();
+		//reset the color total
+		else {
+			displayAmount();
+		}
 		monoTotal = 0;
 	}
 	
-	
-	
 });
-
-function moreFields() {
-		/*
-
-Contact Form Control File
-
-Obtains data from View (HTML) and sends it to process in the Model (PHP).
-
-*/
 
 // Indicates if an error has been found
 var error;
-sendMail();
 
 // =========================================================================
-// sendMail
+// submitForm
 // =========================================================================
-// Main function for recieving and validating the user's inputs. When 
+// Main function for receiving and validating the user's inputs. When
 // finished, information will be sent to the email transfer php function to
 // be prepared and sent to our email.
 // -------------------------------------------------------------------------
-function sendMail(){
+function submitForm(){
 	
-	error = false;		// Reset error to assume there's no errors
+	error = false;	// Reset error to assume there's no errors
 	
 	// Fetch user's information
 	var fname = document.getElementById('fname').value;
@@ -433,7 +439,7 @@ function sendMail(){
 	if (error){
 		$("#errormessage").addClass("show");
 		$("#sendmessage").removeClass("show");
-		scrollToError();
+		scrollToError(); // Scrolls to the first error/invalid input
 		return false; // Prevent form from sending
 		
 	}
@@ -447,20 +453,18 @@ function sendMail(){
 		document.getElementById('address').value = "";
 		document.getElementById('province').value = "";
 		document.getElementById('postal').value = "";
-		
+
+		// Show success message to user
 		$("#errormessage").removeClass("show");
 		$("#sendmessage").addClass("show");
+
 		// Scroll back to top of page
 		$('html, body').animate({scrollTop: 0}, 600);
+
 		// Disable the submit button
 		$('.second-submit').attr('disabled','disabled');
 	}
-	
-	
-	
 
-	
-	
 	//----------------------------------------//
 	// Send user's information to create mail //
 	//----------------------------------------//
@@ -524,8 +528,7 @@ function validateActions(val_id, group_id, msg, err){
 	if(err){		
 		$("#" + val_id).addClass("show");				// Show error
 		$("#" + group_id).addClass("has-error");		// Change underline to red
-		//$("#" + val_id).addClass("tester");				// Show error
-		$("#" + group_id).addClass("tester");
+		$("#" + group_id).addClass("tester");			// Add a class only to those with errors
 		error = err;									// Indicate that we encountered an error if we haven't already	
 													
 	}
@@ -536,9 +539,5 @@ function validateActions(val_id, group_id, msg, err){
 }
 
 function scrollToError() {
-				$('html, body').animate({
-    scrollTop: ($('.tester').first().offset().top - 100)
-},500);
-}
-
+	$('html, body').animate({scrollTop: ($('.tester').first().offset().top - 100)} ,500); // Animation to scroll to first error
 }
