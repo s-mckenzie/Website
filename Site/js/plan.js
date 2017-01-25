@@ -535,6 +535,7 @@ function validateActions(val_id, group_id, msg, err){
 	else{
 		$("#" + val_id).removeClass("show");			// Show error
 		$("#" + group_id).removeClass("has-error");		// Return underline back to blue
+        $("#" + group_id).removeClass("tester");		// Remove a class only to those with errors
 	}
 }
 
