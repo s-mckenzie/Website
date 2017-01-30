@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Terratone</title>
+    <meta name="description" content="Terratone Printers">
+    <meta name="keywords" content="terratone, printer, printers, ink, mono, monochromatic, colour, company, cartridges">
+    
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- =======================================================
+        Theme Name: Medilab
+        Theme URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+        Author: BootstrapMade.com
+        Author URL: https://bootstrapmade.com
+    ======================================================= -->
+  </head>
+  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+  
+  <!--Not usable yet because not http/https
+  <div data-include="comingsoon.html"></div>-->
+  
+  	<!--banner-->
+	<section id="shortbanner" class="shortbanner">
+		<div class="bg-short">
+			<nav class="navbar navbar-default navbar-fixed-top navbar-short no-opacity">
+			  <div class="container">
+			  	<div class="col-md-12">
+				    <div class="navbar-header">
+				      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+				      <!--<a class="navbar-brand" href="#"><img src="img/logo.png" class="img-responsive" style="width: 140px; margin-top: -16px;"></a>-->
+					  <a class="navbar-brand" href="#banner"><h2 style="width: 140px;  color:white">Terratone</h2></a>
+				    </div>
+				    <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+				      <ul class="nav navbar-nav">
+				        <li class=""><a href="index.html">Home</a></li>
+						<li class=""><a href="index.html#about">About</a></li>
+				        <li class=""><a href="index.html#service">Services</a></li>
+				        <li class=""><a href="index.html#contact">Contact</a></li>
+						<li class=""><a href="faq.html">How it works</a></li>
+						<li class=""><a href="plans.html">Plans</a></li>
+						<li class="active"><a href="login.html">Login</a></li>
+						<!--<li class=""><a href="comingsoon.html">Register</a></li>-->
+				      </ul>
+				    </div>
+				</div>
+			  </div>
+			</nav>
+			
+		</div>
+	</section>
+	<!--/ banner-->
+
+	<!--contact-->
+	<section id="contact" class="section-padding">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="ser-title text-center greyer">Login</h2>
+					<hr class="botm-line">
+				</div>
+				
+				<div class="col-md-8 col-sm-8 marb20">
+					<div class="login-info">
+						<div class="space"></div>
+						<div id="sendmessage">Your message has been sent. Thank you!</div>
+						<div id="errormessage">There is an error in one or more fields.</div>
+						<!--FORM-->
+						<form action="" method="post" role="form" class="contactForm" >
+							<div id="emailGroup" class="form-group">
+								<input type="email" class="form-control br-radius-zero" name="email" id="email" placeholder="Email Address"/>
+								<div id="emailVal" class="validation"></div>
+							</div>
+							<div id="passGroup" class="form-group">
+								<input type="password" class="form-control br-radius-zero" name="password" id="password" placeholder="Password"/>
+								<div id="passVal" class="validation"></div>
+							</div>
+							<input type="checkbox" class="br-radius-zero" name="remme" id="remme"/><label>Remember Me?</label>
+							<br>
+							<br>
+							<div class="form-action">
+								<button type="button" class="btn btn-form" onclick="sendMail()">Log In</button>
+							</div>
+						</form>
+						<!--/FORM-->					
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 ">
+					<div class="register-info">
+						<div class="space"></div>
+						<h3 class="greyer">Haven't created an account yet?</h3>
+						<p>Create your planner to begin program.</p>
+						<a class="btn btn-form" href="plans.html">Start Now</a>
+					</div>
+			    </div>
+			</div>
+		</div>
+	</section>
+	<!--/ contact-->
+	<!--footer-->
+	<footer id="footer">
+		<div class="top-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-sm-4 marb20">
+							<div class="ftr-tle">
+								<h4 class="white no-padding">About Us</h4>
+							</div>
+							<div class="info-sec">
+								<p>Terratone is a new and efficient way of printing  that removes most of your regular printing costs and gives you your essentials.</p>
+							</div>
+					</div>
+					<div class="col-md-4 col-sm-4 marb20">
+						<div class="ftr-tle">
+							<h4 class="white no-padding">Quick Links</h4>
+						</div>
+						<div class="info-sec">
+							<ul class="quick-info">
+								<li><a id="scroll" href="#banner"><i class="fa fa-circle"></i>Home</a></li>
+								<li><a id="scroll" href="#service"><i class="fa fa-circle"></i>Service</a></li>
+								<li><a id="scroll" href="#contact"><i class="fa fa-circle"></i>Contact</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 marb20">
+						<div class="ftr-tle">
+							<h4 class="white no-padding">Follow us</h4>
+						</div>
+						<div class="info-sec">
+							<ul class="social-icon">
+								<li class="bglight-blue"><i class="fa fa-facebook"></i></li>
+								<li class="bgred"><i class="fa fa-google-plus"></i></li>
+								<li class="bgdark-blue"><i class="fa fa-linkedin"></i></li>
+								<li class="bglight-blue"><i class="fa fa-twitter"></i></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer-line">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						© Copyright Medilab Theme. All Rights Reserved
+                        <div class="credits">
+                            <!-- 
+                                All the links in the footer should remain intact. 
+                                You can delete the links only if you purchased the pro version.
+                                Licensing information: https://bootstrapmade.com/license/
+                                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Medilab
+                            -->
+                            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--/ footer-->
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="contactform/contactform.js"></script>
+    
+  </body>
+</html>
