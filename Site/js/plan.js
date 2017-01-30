@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
 	// Hiding certain form elements on load. elements will be shown as user completes the form 
 	$('.spType').hide();
 	$('.mpType').hide();
@@ -10,6 +9,7 @@ $(document).ready(function() {
 	$('.submit').hide();
 	$('.amount').hide();
 	$('.personalInfo').hide();
+	
 	
 	// Keeps track of the number of color and mono printers the user needs
 	var colourTotal = 0;

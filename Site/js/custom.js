@@ -1,5 +1,5 @@
 (function ($) {
-    
+    $('body').removeClass('fade-out');
     // Add smooth scrolling to all links in navbar
     $(".navbar a,a.btn-appoint, .quick-info li a, .overlay-detail a").on('click', function(event) {
 		// Only creates scrolling effect on hrefs that aren't links to another page
