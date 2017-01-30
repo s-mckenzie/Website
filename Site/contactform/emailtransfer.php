@@ -37,13 +37,18 @@ if (empty($error)){
 	// It is important to receive the email from ourselves
 	// Most email services nowadays will reject the email thinking it's an impersonation
 	// Having an email address sending to itself SHOULD (hopefully) bypass this
-	$headers = "From: $our_email \r\n";
-	$headers .= "Reply-To: $email \r\n";
+	$headers = "From: <$our_email> \r\n";
+	$headers .= "Reply-To: <$email> \r\n";
 
 
 	// Once everything is prepared then the email will be sent
-	mail($our_email, $subject, $email_body, $headers)
+	//mail("<$our_email>", $subject, $email_body, $headers);
+	//$success = "All is okay.";
 	
+	if( mail("<$our_email>", $subject, $email_body, $headers, "-f noreply@mydomain.com"))
+        $success = "All is okay.";
+    else
+	    $error = "Unable to send email.";
 }
 
 onExit($success, $error);
