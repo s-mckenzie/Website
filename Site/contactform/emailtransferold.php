@@ -9,7 +9,7 @@ $subject = $_POST["subject"];
 $message = $_POST["message"];
 
 // Email Address that will be used to send and recieve the Contact Us emails
-$our_email = "mckenzietsean@gmail.com";		
+$our_email = "EMAIL GOES HERE";		
 
 // In case user managed to get here without any inputs
 if (empty($name) || empty($email) || empty($subject) || empty($message)){
@@ -43,15 +43,12 @@ if (empty($error)){
 
 	// Once everything is prepared then the email will be sent
 	//mail("<$our_email>", $subject, $email_body, $headers);
-	
 	//$success = "All is okay.";
 	
 	if( mail("<$our_email>", $subject, $email_body, $headers, "-f noreply@mydomain.com"))
         $success = "All is okay.";
     else
 	    $error = "Unable to send email.";
-	
-	
 }
 
 onExit($success, $error);

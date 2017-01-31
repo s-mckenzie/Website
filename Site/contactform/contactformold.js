@@ -29,7 +29,7 @@ function sendMail(){
 	//-----------------------------//
 	// Validate user's information //
 	//-----------------------------//
-	/*
+	
 	// Did user input their name?
 	if (name == ''){
 		validateActions("nameVal", "nameGroup", "Name field is empty", true);
@@ -85,7 +85,7 @@ function sendMail(){
 			validateActions("messageVal", "messageGroup", "", false);
 		}
 	}
-	*/
+	
 	// Did we have an error?
 	if (error){
 		$("#errormessage").addClass("show");
@@ -93,18 +93,6 @@ function sendMail(){
 		return false;																		// Prevent form from sending
 	}
 	else{
-		
-		//----------------------------------------//
-		// Send user's information to create mail //
-		//----------------------------------------//
-		
-		// Stores user's information
-		var data = {};
-		data.name = name;
-		data.email = email;
-		data.subject = subject;
-		data.message = message;
-		
 		// Empty each field (to prevent submit button spam)
 		document.getElementById('name').value = "";
 		document.getElementById('email').value = "";
@@ -113,12 +101,19 @@ function sendMail(){
 		
 		$("#errormessage").removeClass("show");
 		$("#sendmessage").addClass("show");
-		$.post("../contactform/pdfdownload.php", data, mailReturn);
-		//$.post("../contactform/emailtransfer.php", data, mailReturn);
 	}
 	
 	
-
+	//----------------------------------------//
+	// Send user's information to create mail //
+	//----------------------------------------//
+	
+	// Stores user's information
+	var data = {};
+	data.name = name;
+	data.email = email;
+	data.subject = subject;
+	data.message = message;
 	
 	//alert(data.name + " || " + data.email + " || " + data.subject + " || " + data.message); 
 	
@@ -139,7 +134,7 @@ function mailReturn(data, status){
 	var obj = jQuery.parseJSON(data);
 	
 	alert("test");
-	alert(obj.success + " " + obj.error);
+	alert(obj);
 	
 	// There was no error
 	if (obj.error == ""){
