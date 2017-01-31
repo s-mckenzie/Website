@@ -29,7 +29,7 @@ function sendMail(){
 	//-----------------------------//
 	// Validate user's information //
 	//-----------------------------//
-	/*
+	
 	// Did user input their name?
 	if (name == ''){
 		validateActions("nameVal", "nameGroup", "Name field is empty", true);
@@ -85,7 +85,7 @@ function sendMail(){
 			validateActions("messageVal", "messageGroup", "", false);
 		}
 	}
-	*/
+	
 	// Did we have an error?
 	if (error){
 		$("#errormessage").addClass("show");
